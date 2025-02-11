@@ -571,12 +571,189 @@ border: 1px solid black;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="styles.css"> <!-- ใช้ External CSS -->
+</head>
+<body>
+
+  <!-- แถบนำทาง -->
+  <nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="index.html" class="active">สินค้า</a>
+    <a href="pages/about.html">เกี่ยวกับ</a>
+    <a href="pages/contact.html">ติดต่อ</a>
+    <a href="files/document.pdf" download>Download Document</a>
+  </nav>
+
+  <button class="back-btn" onclick="history.back()">Back</button>
+
+  <!-- รายการสินค้า -->
+  <div class="product-container">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product1.jpg" alt="Product 1">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 1</h2>
+        <p class="product-price">฿1,999</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product2.png" alt="Product 2">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 2</h2>
+        <p class="product-price">฿1,599</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product3.jpg" alt="Product 3">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 3</h2>
+        <p class="product-price">฿999</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product4.jpg" alt="Product 4">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 4</h2>
+        <p class="product-price">฿1,299</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+</body>
+</html>
+
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* สไตล์เมนูนำทาง */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #6c5ce7;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: #a29bfe;
+}
+
+nav a.active {
+    background: white;
+    color: #6c5ce7;
+}
+
+/* ปุ่มย้อนกลับ */
+.back-btn {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #ff7675;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #d63031;
+}
+
+/* สไตล์รายการสินค้า */
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* การ์ดสินค้า */
+.product-card {
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* รูปภาพสินค้า */
+.product-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ข้อความสินค้า */
+.product-title {
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0 8px;
+}
+
+.product-price {
+    color: #0984e3;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-description {
+    color: #636e72;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.product-button:hover {
+    background: linear-gradient(to right, #574b90, #0652dd);
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![Screenshot 2025-02-11 225611](https://github.com/user-attachments/assets/a18f2a09-4769-4091-9605-7f28295b36fb)
 
 [](#การทดลองที่-5-การจัดการข้อความและฟอนต์)
 ## การทดลองที่ 5: การจัดการข้อความและฟอนต์
@@ -689,12 +866,190 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="styles.css"> <!-- ใช้ External CSS -->
+</head>
+<body>
+
+  <!-- แถบนำทาง -->
+  <nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="index.html" class="active">สินค้า</a>
+    <a href="pages/about.html">เกี่ยวกับ</a>
+    <a href="pages/contact.html">ติดต่อ</a>
+    <a href="files/document.pdf" download>Download Document</a>
+  </nav>
+
+  <button class="back-btn" onclick="history.back()">Back</button>
+
+  <!-- รายการสินค้า -->
+  <div class="product-container">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product1.jpg" alt="Product 1">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 1</h2>
+        <p class="product-price">฿1,999</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product2.png" alt="Product 2">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 2</h2>
+        <p class="product-price">฿1,599</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product3.jpg" alt="Product 3">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 3</h2>
+        <p class="product-price">฿999</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product4.jpg" alt="Product 4">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 4</h2>
+        <p class="product-price">฿1,299</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+</body>
+</html>
+
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* สไตล์เมนูนำทาง */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #6c5ce7;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: #a29bfe;
+}
+
+nav a.active {
+    background: white;
+    color: #6c5ce7;
+}
+
+/* ปุ่มย้อนกลับ */
+.back-btn {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #ff7675;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #d63031;
+}
+
+/* สไตล์รายการสินค้า */
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* การ์ดสินค้า */
+.product-card {
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* รูปภาพสินค้า */
+.product-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ข้อความสินค้า */
+.product-title {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0 8px;
+}
+
+.product-price {
+    color: #00983a;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.product-description {
+    color: #00bbff;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.product-button:hover {
+    background: linear-gradient(to right, #574b90, #0652dd);
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![Screenshot 2025-02-11 230846](https://github.com/user-attachments/assets/ad7a73c7-fed9-48b4-8c23-736054215c13)
 
 [](#การทดลองที่-6-Layout-และการจัดวางอิลิเมนต์)
 ## การทดลองที่ 6: Layout และการจัดวางอิลิเมนต์
@@ -836,12 +1191,209 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+</head>
+<body>
+
+  <!-- แถบนำทาง -->
+  <nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="index.html" class="active">สินค้า</a>
+    <a href="pages/about.html">เกี่ยวกับ</a>
+    <a href="pages/contact.html">ติดต่อ</a>
+    <a href="files/document.pdf" download>Download Document</a>
+  </nav>
+
+  <button class="back-btn" onclick="history.back()">Back</button>
+
+  <!-- รายการสินค้า -->
+  <div class="product-container">
+    
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product1.jpg" alt="Product 1">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 1</h2>
+        <p class="product-price">฿1,999</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+        <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product2.png" alt="Product 2">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 2</h2>
+        <p class="product-price">฿1,599</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+        <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product3.jpg" alt="Product 3">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 3</h2>
+        <p class="product-price">฿999</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+        <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product4.jpg" alt="Product 4">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 4</h2>
+        <p class="product-price">฿1,299</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+        <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product5.jpg" alt="Product 5">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 5</h2>
+        <p class="product-price">฿899</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+        <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+  </div> 
+</body>
+</html>
+
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* สไตล์เมนูนำทาง */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #6c5ce7;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: #a29bfe;
+}
+
+nav a.active {
+    background: white;
+    color: #6c5ce7;
+}
+
+/* ปุ่มย้อนกลับ */
+.back-btn {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #ff7675;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #d63031;
+}
+
+/* สไตล์รายการสินค้า */
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* การ์ดสินค้า */
+.product-card {
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* รูปภาพสินค้า */
+.product-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ข้อความสินค้า */
+.product-title {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0 8px;
+}
+
+.product-price {
+    color: #00983a;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.product-description {
+    color: #00bbff;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.product-button:hover {
+    background: linear-gradient(to right, #574b90, #0652dd);
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![Screenshot 2025-02-11 233258](https://github.com/user-attachments/assets/9abb4211-ad73-4dd0-8fb3-17e59430c95f)
 
 
 ### ตัวอย่างการใช้งาน: การสร้างเลย์เอาต์ Modern Dashboard
@@ -989,10 +1541,237 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+</head>
+<body>
+
+  <!-- แถบนำทาง -->
+  <nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="index.html" class="active">สินค้า</a>
+    <a href="pages/about.html">เกี่ยวกับ</a>
+    <a href="pages/contact.html">ติดต่อ</a>
+    <a href="files/document.pdf" download>Download Document</a>
+  </nav>
+
+  <button class="back-btn" onclick="history.back()">Back</button>
+
+  <!-- หัวข้อสินค้า -->
+  <h1 class="product-title">สินค้าทั้งหมด</h1>
+
+  <!-- รายการสินค้า -->
+  <div class="product-container">
+    
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product1.jpg" alt="Product 1">
+      </div>
+      <div class="product-info">
+        <h2>Product 1</h2>
+        <p class="product-price">฿1,999</p>
+        <p class="product-description">น้ำหอมกลิ่นวนิลา</p>
+        <button class="add-to-cart">🛒 เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product2.png" alt="Product 2">
+      </div>
+      <div class="product-info">
+        <h2>Product 2</h2>
+        <p class="product-price">฿1,599</p>
+        <p class="product-description">น้ำหอมกลิ่นกุหลาบ</p>
+        <button class="add-to-cart">🛒 เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product3.jpg" alt="Product 3">
+      </div>
+      <div class="product-info">
+        <h2>Product 3</h2>
+        <p class="product-price">฿999</p>
+        <p class="product-description">น้ำหอมกลิ่นแฟนตาซี</p>
+        <button class="add-to-cart">🛒 เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product4.jpg" alt="Product 4">
+      </div>
+      <div class="product-info">
+        <h2>Product 4</h2>
+        <p class="product-price">฿1,299</p>
+        <p class="product-description">น้ำหอมกลิ่นมิดไนท์</p>
+        <button class="add-to-cart">🛒 เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product5.jpg" alt="Product 5">
+      </div>
+      <div class="product-info">
+        <h2>Product 5</h2>
+        <p class="product-price">฿899</p>
+        <p class="product-description">น้ำหอมกลิ่นส้ม</p>
+        <button class="add-to-cart">🛒 เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+  </div> 
+</body>
+</html>
+
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f0f4ff, #d6e4ff);
+}
+
+/* แถบนำทาง */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #4A90E2;
+    padding: 12px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+nav a.active {
+    background: white;
+    color: #4A90E2;
+}
+
+/* ปุ่มย้อนกลับ */
+.back-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 16px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #cc0000;
+}
+
+/* หัวข้อ */
+.title {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+/* Grid Layout สำหรับสินค้า */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* การ์ดสินค้า */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 15px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* รูปภาพสินค้า */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* รายละเอียดสินค้า */
+.product-title {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 24px;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* ปุ่มเพิ่มลงตะกร้า */
+.add-to-cart {
+    background: linear-gradient(to right, #4A90E2, #357ABD);
+    color: white;
+    font-size: 14px;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background: linear-gradient(to right, #357ABD, #1C6BA0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![Screenshot 2025-02-12 001134](https://github.com/user-attachments/assets/e9907df1-4d13-4ee9-bd2c-b088b3eebd66)
 
