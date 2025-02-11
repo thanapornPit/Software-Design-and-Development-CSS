@@ -1,4 +1,4 @@
-# ใบงานการทดลอง: พื้นฐานการจัดการรูปแบบเว็บไซต์ด้วย CSS
+![image](https://github.com/user-attachments/assets/d6c057fb-837a-421c-9eac-9b8b363fa6d1)# ใบงานการทดลอง: พื้นฐานการจัดการรูปแบบเว็บไซต์ด้วย CSS
 [](#การทดลองที่-1-ทำความรู้จักกับ-css)
 ## การทดลองที่ 1: ทำความรู้จักกับ CSS
 
@@ -232,9 +232,77 @@ div > p {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery App</title>
+  <link rel="stylesheet" href="styles.css"> <!-- ใช้ External CSS -->
+</head>
+<body>
+
+  <!-- แถบนำทาง -->
+<nav>
+  <ul class="navbar">
+    <li><a href="index.html" class="menu-item">Home</a></li>
+    <li><a href="index.html" class="menu-item active">Product</a></li>
+    <li><a href="pages/about.html" class="menu-item">About</a></li>
+    <li><a href="pages/contact.html" class="menu-item">Contact</a></li>
+    <li><a href="files/document.pdf" class="menu-item" download>Download Document</a></li>
+  </ul>
+</nav>
+
+
+  <button class="back-btn" onclick="history.back()">Back</button>
+
+  <!-- แกลเลอรี่สินค้า -->
+  <div class="gallery">
+    <div class="gallery-item" onclick="showDialog('images/products/product1.jpg', 'Product 1')">
+      <img src="images/products/product1.jpg" alt="Product 1">
+      <p>Product 1</p>
+    </div>
+    <div class="gallery-item" onclick="showDialog('images/products/product2.png', 'Product 2')">
+      <img src="images/products/product2.png" alt="Product 2">
+      <p>Product 2</p>
+    </div>
+    <div class="gallery-item" onclick="showDialog('images/products/product3.jpg', 'Product 3')">
+      <img src="images/products/product3.jpg" alt="Product 3">
+      <p>Product 3</p>
+    </div>
+    <div class="gallery-item" onclick="showDialog('images/products/product4.jpg', 'Product 4')">
+      <img src="images/products/product4.jpg" alt="Product 4">
+      <p>Product 4</p>
+    </div>
+  </div>
+
+  <!-- Popup Dialog -->
+  <div id="dialog" class="dialog">
+    <div class="dialog-content">
+      <img id="dialog-image" src="" alt="">
+      <p id="dialog-description"></p>
+      <button class="close-btn" onclick="closeDialog()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function showDialog(imageSrc, description) {
+      document.getElementById('dialog-image').src = imageSrc;
+      document.getElementById('dialog-description').textContent = description;
+      document.getElementById('dialog').style.display = 'flex';
+    }
+
+    function closeDialog() {
+      document.getElementById('dialog').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![Screenshot 2025-02-11 213719](https://github.com/user-attachments/assets/a9e02489-9da2-4f21-8a95-0b03d1b33ae3)
 
 
 [](#การทดลองที่-3-การจัดการสีและพื้นหลัง)
