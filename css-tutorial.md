@@ -402,12 +402,83 @@ background-size: cover;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="styles.css"> <!-- ใช้ External CSS -->
+</head>
+<body>
+
+  <!-- แถบนำทาง -->
+  <nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="index.html" class="active">สินค้า</a>
+    <a href="pages/about.html">เกี่ยวกับ</a>
+    <a href="pages/contact.html">ติดต่อ</a>
+    <a href="files/document.pdf" download>Download Document</a>
+  </nav>
+
+  <button class="back-btn" onclick="history.back()">Back</button>
+
+  <!-- รายการสินค้า -->
+  <div class="product-container">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product1.jpg" alt="Product 1">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 1</h2>
+        <p class="product-price">฿1,999</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product2.png" alt="Product 2">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 2</h2>
+        <p class="product-price">฿1,599</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product3.jpg" alt="Product 3">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 3</h2>
+        <p class="product-price">฿999</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/products/product4.jpg" alt="Product 4">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">Product 4</h2>
+        <p class="product-price">฿1,299</p>
+        <p class="product-description">รายละเอียดสินค้าตัวอย่าง</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
 
 [](#การทดลองที่-4-การจัดการขนาดและระยะห่าง)
 ## การทดลองที่ 4: การจัดการขนาดและระยะห่าง
+![Screenshot 2025-02-11 224815](https://github.com/user-attachments/assets/c1355d01-6ac6-435f-b7ba-872b8d49c6f9)
 
 ### 4.1 หน่วยวัดและ Box Model
 ```css
