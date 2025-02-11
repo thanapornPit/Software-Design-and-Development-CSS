@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d6c057fb-837a-421c-9eac-9b8b363fa6d1)# ใบงานการทดลอง: พื้นฐานการจัดการรูปแบบเว็บไซต์ด้วย CSS
+# ใบงานการทดลอง: พื้นฐานการจัดการรูปแบบเว็บไซต์ด้วย CSS
 [](#การทดลองที่-1-ทำความรู้จักกับ-css)
 ## การทดลองที่ 1: ทำความรู้จักกับ CSS
 
@@ -171,6 +171,67 @@ div > p {
 
 ```html
 <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* การใช้ Element Selector */
+        nav {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        /* การใช้ Descendant Selector */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* การใช้ Child Selector */
+        nav > ul > li {
+            margin: 0 10px;
+        }
+
+        /* การใช้ Class Selector */
+        .menu-item {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        /* การใช้ Pseudo-class */
+        .menu-item:hover {
+            background-color: #555;
+            border-radius: 3px;
+        }
+
+        /* การใช้ ID Selector */
+        #active {
+            background-color: #007bff;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" class="menu-item" id="active">หน้าแรก</a></li>
+            <li><a href="#" class="menu-item">สินค้า</a></li>
+            <li><a href="#" class="menu-item">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="menu-item">ติดต่อ</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
+```
+### แบบฝึกหัด
+1. แก้ไขโค้ดโปรแกรมเดิม ให้ใช้งาน CSS แบบ External CSS
+2. แก้ไขให้เมนูถูกเลือกที่ สินค้า
+3. เปลี่ยนสีพื้นหลังของเมนู
+### ผลการทดลอง
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -234,11 +295,10 @@ div > p {
 
 </body>
 </html>
-
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
 
-![Screenshot 2025-02-11 220813](https://github.com/user-attachments/assets/b558662b-f567-4977-94c9-c67aafc3877f)
+![Screenshot 2025-02-11 220813](https://github.com/user-attachments/assets/ab4822dd-3cc3-4d50-a39c-c500bc166ef4)
 
 
 [](#การทดลองที่-3-การจัดการสีและพื้นหลัง)
